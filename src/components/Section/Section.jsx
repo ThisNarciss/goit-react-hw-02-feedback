@@ -7,10 +7,12 @@ export class Section extends Component {
     children: PropTypes.object.isRequired,
   };
   render() {
+    const { title, children } = this.props;
+
     return (
       <section>
-        <h1>{this.props.title}</h1>
-        {this.props.children}
+        <h1>{title}</h1>
+        {children}
       </section>
     );
   }

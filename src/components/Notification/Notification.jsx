@@ -7,10 +7,6 @@ export class Notification extends Component {
   };
 
   render() {
-    return (
-      <>
-        <p>{this.props.message}</p>
-      </>
-    );
+    return <p>{this.props.message}</p>;
   }
 }

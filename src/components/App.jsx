@@ -1,8 +1,8 @@
 import { Component } from 'react';
-import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
-import { Notification } from './Notification/Notification';
-import { Section } from './Section/Section';
-import { Statistics } from './Statistics/Statistics';
+import { FeedbackOptions } from 'components/FeedbackOptions/FeedbackOptions';
+import { Notification } from 'components/Notification/Notification';
+import { Section } from 'components/Section/Section';
+import { Statistics } from 'components/Statistics/Statistics';
 
 export class App extends Component {
   state = {
@@ -13,9 +13,8 @@ export class App extends Component {
 
   onLeaveFeedback = evt => {
     const target = evt.target.innerHTML.toLowerCase();
-    this.setState(prevState => {
-      return { [target]: prevState[target] + 1 };
-    });
+    this.setState({ [target]: this.state[target] + 1 });
+    console.dir(evt.currentTarget);
   };
 
   countTotalFeedback = () => {
@@ -24,8 +23,9 @@ export class App extends Component {
   };
 
   countPositiveFeedbackPercentage = () => {
-    const { good, neutral, bad } = this.state;
-    return Math.round((100 / (good + neutral + bad)) * good);
+    const { good } = this.state;
+    const percentage = Math.round((good * 100) / this.countTotalFeedback());
+    return percentage ? percentage : 0;
   };
 
   render() {
