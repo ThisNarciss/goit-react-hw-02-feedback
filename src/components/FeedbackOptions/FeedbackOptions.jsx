@@ -1,5 +1,10 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
+import {
+  OptionsList,
+  OptionsListItem,
+  OptionsListBtn,
+} from './FeedbackOptions.styled';
 
 export class FeedbackOptions extends Component {
   static propTypes = {
@@ -10,17 +15,21 @@ export class FeedbackOptions extends Component {
   render() {
     const { options, onLeaveFeedback } = this.props;
     return (
-      <ul>
+      <OptionsList>
         {options.map(option => {
           return (
-            <li key={option}>
-              <button type="button" onClick={onLeaveFeedback}>
+            <OptionsListItem key={option}>
+              <OptionsListBtn
+                id={option}
+                type="button"
+                onClick={onLeaveFeedback}
+              >
                 {option[0].toUpperCase() + option.slice(1, option.length)}
-              </button>
-            </li>
+              </OptionsListBtn>
+            </OptionsListItem>
           );
         })}
-      </ul>
+      </OptionsList>
     );
   }
 }

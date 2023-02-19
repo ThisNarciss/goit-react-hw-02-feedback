@@ -3,6 +3,7 @@ import { FeedbackOptions } from 'components/FeedbackOptions/FeedbackOptions';
 import { Notification } from 'components/Notification/Notification';
 import { Section } from 'components/Section/Section';
 import { Statistics } from 'components/Statistics/Statistics';
+import { Container } from './App.styled';
 
 export class App extends Component {
   state = {
@@ -14,7 +15,6 @@ export class App extends Component {
   onLeaveFeedback = evt => {
     const target = evt.target.innerHTML.toLowerCase();
     this.setState({ [target]: this.state[target] + 1 });
-    console.dir(evt.currentTarget);
   };
 
   countTotalFeedback = () => {
@@ -31,7 +31,7 @@ export class App extends Component {
   render() {
     const { good, neutral, bad } = this.state;
     return (
-      <div>
+      <Container>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}
@@ -51,7 +51,7 @@ export class App extends Component {
             <Notification message="There is no feedback"></Notification>
           )}
         </Section>
-      </div>
+      </Container>
     );
   }
 }

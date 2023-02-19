@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
+import { StatList, StatListItem } from './Statistics.styled';
 
 export class Statistics extends Component {
   static propTypes = {
@@ -11,28 +12,30 @@ export class Statistics extends Component {
   };
   render() {
     const { good, neutral, bad, total, positivePercentage } = this.props;
-
+    const [g, n, b] = Object.keys(this.props);
     return (
-      <ul>
-        <li>
-          <p>Good:{good}</p>
-        </li>
-        <li>
-          <p>Neutral:{neutral}</p>
-        </li>
-        <li>
-          <p>Bad:{bad}</p>
-        </li>
-        <li>
-          <p>Total:{total}</p>
-        </li>
-        <li>
-          <p>
-            Positive feedback:
-            {positivePercentage}
-          </p>
-        </li>
-      </ul>
+      <StatList>
+        <StatListItem id={g}>
+          <p>Good:</p>
+          <p> {good}</p>
+        </StatListItem>
+        <StatListItem id={n}>
+          <p>Neutral:</p>
+          <p> {neutral}</p>
+        </StatListItem>
+        <StatListItem id={b}>
+          <p>Bad:</p>
+          <p> {bad}</p>
+        </StatListItem>
+        <StatListItem>
+          <p>Total:</p>
+          <p> {total}</p>
+        </StatListItem>
+        <StatListItem>
+          <p>Positive feedback:</p>
+          <p> {positivePercentage}%</p>
+        </StatListItem>
+      </StatList>
     );
   }
 }

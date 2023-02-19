@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
+import { Text } from './Notification.styled';
 
 export class Notification extends Component {
   static propTypes = {
@@ -7,6 +8,6 @@ export class Notification extends Component {
   };
 
   render() {
-    return <p>{this.props.message}</p>;
+    return <Text>{this.props.message}</Text>;
   }
 }

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
+import { SectionBox, SectionTitle } from './Section.styled';
 
 export class Section extends Component {
   static propTypes = {
@@ -10,10 +11,10 @@ export class Section extends Component {
     const { title, children } = this.props;
 
     return (
-      <section>
-        <h1>{title}</h1>
+      <SectionBox>
+        <SectionTitle>{title}</SectionTitle>
         {children}
-      </section>
+      </SectionBox>
     );
   }
 }
