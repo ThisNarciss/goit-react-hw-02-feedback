@@ -12,28 +12,28 @@ export class Statistics extends Component {
   };
   render() {
     const { good, neutral, bad, total, positivePercentage } = this.props;
-    const [g, n, b] = Object.keys(this.props);
+    const [goodVar, neutralVar, badVar] = Object.keys(this.props);
     return (
       <StatList>
-        <StatListItem id={g}>
+        <StatListItem variant={goodVar}>
           <p>Good:</p>
-          <p> {good}</p>
+          <p>{good}</p>
         </StatListItem>
-        <StatListItem id={n}>
+        <StatListItem variant={neutralVar}>
           <p>Neutral:</p>
-          <p> {neutral}</p>
+          <p>{neutral}</p>
         </StatListItem>
-        <StatListItem id={b}>
+        <StatListItem variant={badVar}>
           <p>Bad:</p>
-          <p> {bad}</p>
+          <p>{bad}</p>
         </StatListItem>
         <StatListItem>
           <p>Total:</p>
-          <p> {total}</p>
+          <p>{total}</p>
         </StatListItem>
         <StatListItem>
           <p>Positive feedback:</p>
-          <p> {positivePercentage}%</p>
+          <p>{positivePercentage}%</p>
         </StatListItem>
       </StatList>
     );

@@ -20,7 +20,7 @@ export class FeedbackOptions extends Component {
           return (
             <OptionsListItem key={option}>
               <OptionsListBtn
-                id={option}
+                variant={option}
                 type="button"
                 onClick={onLeaveFeedback}
               >

@@ -14,7 +14,7 @@ export const StatListItem = styled.li`
 
   justify-content: space-between;
   color: ${props => {
-    switch (props.id) {
+    switch (props.variant) {
       case 'good':
         return 'white';
 
@@ -29,7 +29,7 @@ export const StatListItem = styled.li`
     }
   }};
   background-color: ${props => {
-    switch (props.id) {
+    switch (props.variant) {
       case 'good':
         return 'green';
 

@@ -17,7 +17,7 @@ export const OptionsListBtn = styled.button`
   border-radius: 5px;
   color: white;
   background-color: ${props => {
-    switch (props.id) {
+    switch (props.variant) {
       case 'good':
         return 'green';
 
