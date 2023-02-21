@@ -1,19 +1,16 @@
 import PropTypes from 'prop-types';
-import { Component } from 'react';
+
 import { SectionBox, SectionTitle } from './Section.styled';
 
-export class Section extends Component {
-  static propTypes = {
-    title: PropTypes.string.isRequired,
-  };
-  render() {
-    const { title, children } = this.props;
+export const Section = ({ title, children }) => {
+  return (
+    <SectionBox>
+      <SectionTitle>{title}</SectionTitle>
+      {children}
+    </SectionBox>
+  );
+};
 
-    return (
-      <SectionBox>
-        <SectionTitle>{title}</SectionTitle>
-        {children}
-      </SectionBox>
-    );
-  }
-}
+Notification.propTypes = {
+  title: PropTypes.string.isRequired,
+};
